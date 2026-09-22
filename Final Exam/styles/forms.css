@@ -1,0 +1,78 @@
+/** Form Styles **/
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+label {
+    color: #272727;
+}
+/** Required Field Asterisk **/
+label:has(+ input[required])::after,
+label:has(+ textarea[required])::after,
+label:has(+ select[required])::after,
+.required {
+    content: ' *';
+    color: #FF6B6B;
+}
+/** Input Styles **/
+label, input, select, textarea {
+    font-family: "DM Sans", sans-serif;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+input, select, textarea {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #272727;
+    font-size: 1.1em;
+    padding: 15px;
+    margin-bottom: 24px;
+}
+/** Ensuring that radio buttons, checkboxes, and their labels are inline **/
+input[type=radio], input[type=checkbox], .inline-label {
+    display: inline-block;
+    width: auto;
+}
+input[type=radio], input[type=checkbox] {
+    height: auto;
+}
+input[type=radio] + label.inline-label,
+input[type=checkbox] + label.inline-label {
+    margin-right: 1rem;
+}
+textarea {
+    height: 220px;
+}
+input[type=submit] {
+    background-color: #001220;
+    color: #dddddd;
+    padding: 0;
+    width: 50%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+fieldset {
+    display: block;
+    border: 0;
+    padding: 0;
+    width: 100%;
+}
+.error {
+    color: #FF6B6B;
+    width: 100%;
+}
+
+.success {
+    width: 100%;
+}
+.error > p {
+    margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 650px) {
+    input[type=submit] {
+        width: 100%;
+    }
+}
